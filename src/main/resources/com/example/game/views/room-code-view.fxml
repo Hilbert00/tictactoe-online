@@ -4,7 +4,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -13,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #1588e6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox alignment="CENTER_LEFT" prefHeight="20.0">
             <children>
-                <Label style="-fx-font-weight: bold;" text="Velha Online" />
+                <Label style="-fx-font-weight: bold;" text="Velha Online" textFill="WHITE" />
                 <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
-                <Label fx:id="username" text="User" />
+                <Label fx:id="username" text="User" textFill="WHITE" />
             </children>
         </HBox>
         <GridPane alignment="CENTER" prefHeight="344.0" prefWidth="560.0">
@@ -37,36 +36,28 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Criar" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Button mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="25.0" prefWidth="190.0" style="-fx-background-color: #e62315;" text="Voltar" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor></Button>
-                <Button mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="25.0" prefWidth="190.0" text="Voltar" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor></Button>
-                <Label alignment="CENTER" prefHeight="45.0" prefWidth="190.0" text="Partidas" GridPane.columnIndex="2">
+                <Label alignment="CENTER" prefHeight="45.0" prefWidth="190.0" text="Sala Criada" textFill="WHITE" GridPane.columnIndex="2">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <children>
-                  <TextField prefHeight="25.0" prefWidth="104.0" promptText="Código da sala" />
-                  <Region prefHeight="67.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Entrar">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Button>
-               </children>
-            </HBox>
+            <Label fx:id="roomCode" alignment="CENTER" prefHeight="17.0" prefWidth="224.0" text="00000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="302.0" text="Compartilhe o código abaixo:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             </children>
         </GridPane>
-        <Label prefHeight="20.0" text="Nicolas Hilbert · 2023" textAlignment="CENTER">
+        <Label prefHeight="20.0" text="Nicolas Hilbert · 2023" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font size="10.0" />
             </font>

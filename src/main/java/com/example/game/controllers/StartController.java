@@ -41,9 +41,26 @@ public class StartController {
     @FXML
     protected void onPlayButtonClick() {
         try {
-            FindMatchController controller = new FindMatchController(user);
+            MatchMenuController controller = new MatchMenuController(user);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/find-match-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/match-menu-view.fxml"));
+            fxmlLoader.setController(controller);
+
+            Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+            Stage stage = (Stage) username.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException err) {
+            System.out.println("Erro ao carregar o arquivo XML: " + err);
+        }
+    }
+
+    @FXML
+    protected void onRankingButtonClick() {
+        try {
+            RankingController controller = new RankingController(user);
+
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/ranking-view.fxml"));
             fxmlLoader.setController(controller);
 
             Scene scene = new Scene(fxmlLoader.load(), 600, 450);

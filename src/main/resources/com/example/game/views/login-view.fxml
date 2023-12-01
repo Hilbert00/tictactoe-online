@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="30.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.controllers.LoginController">
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: #1588e6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.controllers.LoginController">
    <children>
-      <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" text="VELHA ONLINE" textAlignment="CENTER">
+      <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" text="VELHA ONLINE" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="593.0" text="Login" textAlignment="CENTER">
+      <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="593.0" text="Login" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
@@ -37,11 +37,11 @@
             <PasswordField fx:id="passwordField" prefHeight="22.0" prefWidth="265.0" promptText="Senha" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button alignment="BASELINE_CENTER" contentDisplay="CENTER" onAction="#onLoginButtonClick" prefHeight="25.0" prefWidth="140.0" text="Entrar" textAlignment="CENTER">
+      <Button alignment="BASELINE_CENTER" contentDisplay="CENTER" onAction="#onLoginButtonClick" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #15e67a;" text="Entrar" textAlignment="CENTER" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label fx:id="signupText" onMouseClicked="#onSignupTextClick" text="Ainda não tem uma conta?">
+      <Label fx:id="signupText" onMouseClicked="#onSignupTextClick" text="Ainda não tem uma conta?" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Label>

@@ -4,14 +4,9 @@ import java.sql.*;
 
 public class User {
     private int id;
-    private String username;
-    private String password;
-    private Connection connection;
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+    private final String username;
+    private final String password;
+    private final Connection connection;
 
     public User(String username, String password, Connection connection) {
         this.username = username;
@@ -23,24 +18,12 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public Connection getConnection() {
+        return connection;
     }
 
     public boolean signup() {
@@ -89,6 +72,28 @@ public class User {
         } catch (SQLException err) {
             System.out.println("Erro ao preparar o SQL.");
             return -1;
+        }
+    }
+
+    public void updateRanking(boolean win) {
+        try {
+            String sql = String.format("INSERT INTO leaderboard (users_id_user, wins, matches) VALUES (?, %d, 1);", win ? 1 : 0);
+
+            PreparedStatement req = connection.prepareStatement(sql);
+            req.setInt(1, id);
+
+            req.executeUpdate();
+        } catch (SQLException err) {
+            String sql = String.format("UPDATE leaderboard SET wins = wins + %d, matches = matches + 1 WHERE users_id_user = ?;", win ? 1 : 0);
+
+            try {
+                PreparedStatement req = connection.prepareStatement(sql);
+                req.setInt(1, id);
+
+                req.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("Erro ao preparar o SQL.");
+            }
         }
     }
 }
